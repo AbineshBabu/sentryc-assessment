@@ -24,7 +24,8 @@
   "dependencies": {
     "cypress": "^9.5.3",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.20.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
