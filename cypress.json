@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://d1g5e94sevp1ds.cloudfront.net",
+    "testFiles": "**/*.feature",
+    "watchForFileChanges":false,
+    "videoCompression": false,
+    "hideXHR": true
+}

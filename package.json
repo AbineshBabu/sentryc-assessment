@@ -1,0 +1,35 @@
+{
+  "name": "sentryc-assessment",
+  "version": "1.0.0",
+  "description": "Description:\r  To automate the test cases covering login and reset password pages.",
+  "main": "index.js",
+  "scripts": {
+    "test-all": "npx cypress run --spec cypress/integration/*.feature",
+    "test-login": "npx cypress run --spec cypress/integration/login.feature",
+    "test-resetPassword": "npx cypress run --spec cypress/integration/reset_password.feature",
+    "cypress_opne": "npx cypress open",
+    "generate_report": "cd cypress && node report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbineshBabu/sentryc-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbineshBabu/sentryc-assessment/issues"
+  },
+  "homepage": "https://github.com/AbineshBabu/sentryc-assessment#readme",
+  "dependencies": {
+    "cypress": "^9.5.3",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json"
+    }
+  }
+}
