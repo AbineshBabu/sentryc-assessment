@@ -3,5 +3,6 @@
     "testFiles": "**/*.feature",
     "watchForFileChanges":false,
     "videoCompression": false,
-    "hideXHR": true
+    "hideXHR": true,
+    "retries": 1
 }
