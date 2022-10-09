@@ -1,5 +1,5 @@
 {
-  "name": "sentryc-assessment",
+  "name": "sentryc",
   "version": "1.0.0",
   "description": "Description:\r  To automate the test cases covering login and reset password pages.",
   "main": "index.js",

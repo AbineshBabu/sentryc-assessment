@@ -11,7 +11,7 @@ Feature: To test the login page
 
     Scenario: To verify whether the system displays "This field is required." below the Password field alone
         When user enter valid email address
-            |email_address|
+            |emailAddress|
             |test@yopmail.com|
         When user clicks on the login button
         Then system should display the error message below password field
@@ -29,7 +29,7 @@ Feature: To test the login page
 
     Scenario: To verify whether the system displays "Wrong email or password." for invalid E-mail and Password
         When user enter valid email address and password
-            |email_address   |password|
+            |emailAddress   |password|
             |test@yopmail.com|test@123|
         When user clicks on the login button
         Then system should display error message in popup
@@ -38,7 +38,7 @@ Feature: To test the login page
 
     Scenario: To verify whether the system displays a error message as "Email is incorrect. Please enter a valid email address." for invalid format of E-mail 
         When user enter invalid format of email address
-            |invalid_email_address   |
+            |invalidEmailAddress   |
             |test@123|
         When user clicks on the login button
         Then system should display the error message below E-mail field
@@ -48,3 +48,5 @@ Feature: To test the login page
     Scenario: To verify whether the system navigate to "Reset password" page
         When user clicks on the forgot your password link
         Then system should navigate to reset password page
+            |url|
+            |https://d1g5e94sevp1ds.cloudfront.net/reset|

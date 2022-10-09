@@ -2,60 +2,62 @@
 
 import { When, Then} from 'cypress-cucumber-preprocessor/steps';
 import { Reset } from '../../pageobjects/reset_password';
-const reset_password = new Reset();
+const resetPassword = new Reset();
 
-var expected_error_message;
+var expectedErrorMessage;
 
 When('user clicks on send email button', () => {
-    reset_password.click_send_email();
+    resetPassword.clickSendEmail();
 })
 
 When('user enter invalid format of email address', (datatable) => {
     datatable.hashes().forEach( element => {
-        reset_password.enter_E_mail(element.invalid_email_address);
+        resetPassword.enterEMail(element.invalidEmailAddress);
     })
 })
 
 When('user enter valid format of email address', (datatable) => {
     datatable.hashes().forEach( element => {
-        reset_password.enter_E_mail(element.valid_email_address);
+        resetPassword.enterEMail(element.validEmailAddress);
     })
 })
 
 When('user clicks on the Back to Login link', () => {
-    reset_password.click_back_to_login();
+    resetPassword.clickBackToLogin();
 })
 
 Then('system should display the error message', (datatable) => {
     datatable.hashes().forEach(element => {
-        expected_error_message = element.message;
-        reset_password.elements.E_mail_error_message().then((value) => {
-            var actual_error_message = value.text();
-            expect(expected_error_message).to.equal(actual_error_message);
+        expectedErrorMessage = element.message;
+        resetPassword.elements.EMailErrorMessage().then((value) => {
+            var actualErrorMessage = value.text();
+            expect(expectedErrorMessage).to.equal(actualErrorMessage);
         })
     });
 })
 
-Then('system should navigate to login page', () => {
-    cy.url().should('eq','https://d1g5e94sevp1ds.cloudfront.net/login');
+Then('system should navigate to login page', (datatable) => {
+    datatable.hashes().forEach(element => {
+        cy.url().should('eq',element.url);
+    })
 })
 
 Then('system should display the error message below E-mail field', (datatable) => {
     datatable.hashes().forEach(element => {
-        expected_error_message = element.message;
-        reset_password.elements.E_mail_error_message().then((value) => {
-            var e_mail_error_message = value.text();
-            expect(expected_error_message).to.equal(e_mail_error_message);
+        expectedErrorMessage = element.message;
+        resetPassword.elements.EMailErrorMessage().then((value) => {
+            var eMailErrorMessage = value.text();
+            expect(expectedErrorMessage).to.equal(eMailErrorMessage);
         })
     })  
 })
 
 Then('system should display error message in popup', (datatable) => {
     datatable.hashes().forEach(element => {
-        expected_error_message = element.message;
-        reset_password.elements.popup_message().then((value) => {
-            var popoup_error_message = value.text();
-            expect(expected_error_message).to.equal(popoup_error_message);
+        expectedErrorMessage = element.message;
+        resetPassword.elements.popupMessage().then((value) => {
+            var popoupErrorMessage = value.text();
+            expect(expectedErrorMessage).to.equal(popoupErrorMessage);
         })
     })  
 })
