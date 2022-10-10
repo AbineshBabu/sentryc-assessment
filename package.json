@@ -7,7 +7,7 @@
     "test-all": "npx cypress run --spec cypress/integration/*.feature",
     "test-login": "npx cypress run --spec cypress/integration/login.feature",
     "test-resetPassword": "npx cypress run --spec cypress/integration/reset_password.feature",
-    "cypress_opne": "npx cypress open",
+    "cypress_open": "npx cypress open",
     "generate_report": "cd cypress && node report.js"
   },
   "repository": {

@@ -34,6 +34,7 @@ A Cypress Automation Test Framework with cucumber to validate the login and forg
 ### Folder Structure
 
 - `integration` - To maintain all the test cases in Gherkin syntax and step definition.
+- `pageobjects` - To maintain page elements and page actions.
 - `plugins` - To maintain the events listeners. Logs the events.
 - `support` - To maintain reusable scripts.
 - `cypress.json` - Cypress configurations. Override default values
